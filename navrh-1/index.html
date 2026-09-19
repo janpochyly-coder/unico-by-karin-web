@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNICO by Karin — Zdravie vlasov a pleti od medzinárodnej lektorky</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6f1e9;
+    --paper:#fbf8f3;
+    --ink:#2b2723;
+    --soft:#6f665c;
+    --gold:#b0894f;
+    --gold-deep:#8a6a3a;
+    --line:#e3d9c9;
+    --rose:#c9a9a0;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Jost',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    font-weight:300;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+  .serif-i{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+  .eyebrow{
+    font-size:11px;letter-spacing:.42em;text-transform:uppercase;
+    color:var(--gold-deep);font-weight:400;
+  }
+
+  /* top bar */
+  .topbar{
+    background:var(--ink);color:var(--cream);
+    font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    text-align:center;padding:10px 20px;
+  }
+  .topbar a{color:var(--cream);border-bottom:1px solid rgba(255,255,255,.35)}
+
+  /* nav */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(251,248,243,.9);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.16em}
+  .brand span{color:var(--gold-deep)}
+  .nav-links{display:flex;gap:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+  .nav-links a{color:var(--soft);transition:color .3s}
+  .nav-links a:hover{color:var(--gold-deep)}
+  .nav-cta{
+    border:1px solid var(--ink);padding:11px 20px;font-size:11px;
+    letter-spacing:.18em;text-transform:uppercase;transition:.3s;
+  }
+  .nav-cta:hover{background:var(--ink);color:var(--cream)}
+  .burger{display:none}
+
+  /* hero */
+  .hero{padding:90px 0 70px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+  .hero h1{font-size:76px;letter-spacing:.01em;margin:22px 0 26px}
+  .hero h1 em{color:var(--gold-deep)}
+  .hero p.lead{font-size:18px;color:var(--soft);max-width:460px;margin-bottom:34px}
+  .hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .btn{
+    display:inline-block;background:var(--gold-deep);color:var(--cream);
+    padding:16px 34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    transition:.35s;
+  }
+  .btn:hover{background:var(--ink)}
+  .btn-ghost{
+    padding:16px 4px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--ink);border-bottom:1px solid var(--gold);
+  }
+  .hero-img{
+    position:relative;aspect-ratio:4/5;border-radius:2px;overflow:hidden;
+    background:
+      linear-gradient(135deg,#e9ddca 0%,#d8c3a6 45%,#c9a9a0 100%);
+  }
+  .hero-img .ornament{
+    position:absolute;inset:18px;border:1px solid rgba(255,255,255,.5);
+  }
+  .hero-img .tag{
+    position:absolute;left:22px;bottom:22px;background:var(--paper);
+    padding:16px 22px;max-width:230px;
+  }
+  .hero-img .tag .serif-i{font-size:21px;display:block;line-height:1.25;color:var(--ink)}
+  .hero-img .tag small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep)}
+
+  /* marquee strip */
+  .strip{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    padding:20px 0;margin-top:60px;
+    display:flex;justify-content:center;gap:52px;flex-wrap:wrap;
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:22px;color:var(--soft);
+  }
+  .strip span{color:var(--gold-deep)}
+
+  /* section shell */
+  section{padding:100px 0}
+  .sec-head{max-width:660px;margin-bottom:56px}
+  .sec-head h2{font-size:52px;margin:16px 0 18px}
+  .sec-head p{color:var(--soft);font-size:17px}
+
+  /* intro / about */
+  .about{background:var(--cream)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+  .about-img{aspect-ratio:1/1;background:linear-gradient(160deg,#d8c3a6,#c9a9a0);position:relative}
+  .about-img .ornament{position:absolute;inset:20px;border:1px solid rgba(255,255,255,.45)}
+  .about blockquote{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:30px;
+    line-height:1.35;color:var(--ink);margin:0 0 28px;
+  }
+  .about p{color:var(--soft);margin-bottom:18px}
+  .signature{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold-deep);margin-top:10px}
+
+  /* pillars */
+  .pillars-head{text-align:center;max-width:720px;margin:0 auto 68px}
+  .pillars-head h2{font-size:52px;margin:16px 0 18px}
+  .pillars-head p{color:var(--soft);font-size:17px}
+  .pillar{
+    display:grid;grid-template-columns:64px 1fr 1fr;gap:48px;align-items:start;
+    padding:52px 0;border-top:1px solid var(--line);
+  }
+  .pillar:last-child{border-bottom:1px solid var(--line)}
+  .pillar .num{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:1}
+  .pillar h3{font-size:34px;margin-bottom:10px}
+  .pillar .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--gold-deep);margin-bottom:0}
+  .pillar .body p{color:var(--soft);margin-bottom:14px}
+  .pillar .body p:last-child{margin-bottom:0}
+  .brands-line{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:6px}
+
+  /* services quick list */
+  .services{background:var(--ink);color:var(--cream)}
+  .services .sec-head h2{color:var(--cream)}
+  .services .sec-head .eyebrow{color:var(--gold)}
+  .services .sec-head p{color:#c9beae}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12)}
+  .svc-cell{background:var(--ink);padding:40px 32px;transition:.4s}
+  .svc-cell:hover{background:#332e28}
+  .svc-cell .n{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold)}
+  .svc-cell h4{font-size:27px;margin:12px 0 8px;color:var(--cream)}
+  .svc-cell p{font-size:14px;color:#b9ad9c}
+
+  /* why me */
+  .why{background:var(--cream)}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:20px}
+  .why-card{background:var(--paper);padding:44px 34px;border:1px solid var(--line)}
+  .why-card .num{font-family:'Cormorant Garamond',serif;font-size:44px;color:var(--gold)}
+  .why-card h4{font-size:26px;margin:14px 0 10px}
+  .why-card p{color:var(--soft);font-size:15px}
+
+  /* closing manifesto */
+  .manifesto{text-align:center;padding:120px 0}
+  .manifesto p{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-size:34px;
+    line-height:1.5;max-width:900px;margin:24px auto 0;color:var(--ink);
+  }
+  .manifesto p em{color:var(--gold-deep)}
+
+  /* contact */
+  .contact{background:var(--ink);color:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+  .contact h2{font-size:56px;color:var(--cream);margin-bottom:22px}
+  .contact p{color:#c9beae;font-size:17px;margin-bottom:30px;max-width:440px}
+  .phone-box{
+    display:inline-flex;flex-direction:column;gap:6px;
+    border:1px solid rgba(255,255,255,.25);padding:30px 40px;
+  }
+  .phone-box small{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+  .phone-box a{font-family:'Cormorant Garamond',serif;font-size:44px;letter-spacing:.02em}
+  .contact-side .row{padding:22px 0;border-top:1px solid rgba(255,255,255,.16)}
+  .contact-side .row:first-child{border-top:none}
+  .contact-side .row small{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:6px}
+  .contact-side .row p{color:var(--cream);margin:0;font-size:16px}
+  .socials{display:flex;gap:18px;margin-top:14px}
+  .socials a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px}
+
+  footer{background:#211d19;color:#8f8578;padding:36px 0;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+  footer .brand{display:block;color:var(--cream);font-size:22px;margin-bottom:12px;letter-spacing:.16em}
+
+  @media(max-width:900px){
+    .nav-links,.nav-cta{display:none}
+    .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+    .hero h1{font-size:54px}
+    .pillar{grid-template-columns:1fr;gap:16px;padding:40px 0}
+    .svc-grid,.why-grid{grid-template-columns:1fr}
+    .sec-head h2,.pillars-head h2,.contact h2{font-size:40px}
+    .manifesto p{font-size:26px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Objednávky výhradne telefonicky &nbsp;·&nbsp; <a href="tel:+421911476786">+421 911 476 786</a> &nbsp;·&nbsp; Zvolen a široké okolie
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <div class="brand">UNICO <span>by Karin</span></div>
+    <div class="nav-links">
+      <a href="#pribeh">Príbeh</a>
+      <a href="#piliere">Piliere</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#preco">Prečo ja</a>
+      <a href="#kontakt">Kontakt</a>
+    </div>
+    <a href="tel:+421911476786" class="nav-cta">Objednať sa</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Zdravie vlasov a pleti od medzinárodnej lektorky</span>
+      <h1>Krása ako<br><em>osobný rituál</em></h1>
+      <p class="lead">Prepojením špičkovej talianskej vlasovej architektúry, trichológie a pokročilej pleťovej estetiky mením bežnú starostlivosť na osobný rituál zdravia, krásy a sebavedomia — pre ženy aj mužov.</p>
+      <div class="hero-actions">
+        <a href="tel:+421911476786" class="btn">Objednať telefonicky</a>
+        <a href="#piliere" class="btn-ghost">Spoznajte piliere salónu</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <div class="ornament"></div>
+      <div class="tag">
+        <small>Komplexná starostlivosť na mieru</small>
+        <span class="serif-i">Zistite, čo vaša pleť a vlasy naozaj potrebujú.</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="strip">
+      <div>Trichológia</div><span>·</span>
+      <div>Talianske techniky</div><span>·</span>
+      <div>Fusion &amp; Ekseption</div><span>·</span>
+      <div>Old-school barber</div><span>·</span>
+      <div>Vizáž &amp; líčenie</div>
+    </div>
+  </div>
+</header>
+
+<section class="about" id="pribeh">
+  <div class="wrap about-grid">
+    <div class="about-img"><div class="ornament"></div></div>
+    <div>
+      <span class="eyebrow">O mne</span>
+      <blockquote>Mením bežnú starostlivosť na osobný rituál zdravia, krásy a sebavedomia.</blockquote>
+      <p>Ako medzinárodná lektorka spájam vedu a remeslo — trichológiu, talianske techniky strihu a farbenia i pokročilú pleťovú estetiku pod jednou strechou. Neposkytujem sériové ošetrenia. Každý postup navrhujem na mieru vášmu aktuálnemu stavu.</p>
+      <p>Vzdelávam iných profesionálov v tejto sfére. To, čo dostanete, nie je bežná služba — je to práca rúk lektorky, ktorá stavia na diagnostike a detaile.</p>
+      <div class="signature">Karin</div>
+    </div>
+  </div>
+</section>
+
+<section id="piliere">
+  <div class="wrap">
+    <div class="pillars-head">
+      <span class="eyebrow">Predstavím vám 5 pilierov môjho salónu</span>
+      <h2>Päť pilierov starostlivosti</h2>
+      <p>Od diagnostiky pokožky hlavy až po dokonalú vizáž — každý pilier stojí na vede, remesle a osobnom prístupe.</p>
+    </div>
+
+    <div class="pillar">
+      <div class="num">01</div>
+      <div>
+        <h3>Trichológia &amp; Zdravie vlasov</h3>
+        <p class="quote">„Vlasy sú len také krásne, ako je zdravá pokožka hlavy.“</p>
+      </div>
+      <div class="body">
+        <p>Riešime príčinu, nie len následok. Spájam diagnostiku pokožky s cielene navrhnutou terapiou, ktorá navracia pokožke zdravie a vlasom hustotu, silu a prirodzený lesk.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">02</div>
+      <div>
+        <h3>Kaderníctvo &amp; Taliansky štýl</h3>
+        <p class="quote">„Technológia a strih z kolísky módy.“</p>
+      </div>
+      <div class="body">
+        <p>Ročne navštevujem talianske akadémie, aby som na Slovensko prinášala najnovšie technológie farbenia a precízne strihy. Nechytám sa trendov slepo — prispôsobujem ich architektúre vašej tváre.</p>
+        <p>Odchádzate odo mňa s farbou, ktorá má hĺbku, a strihom, ktorý drží tvar aj po týždňoch. Každý pohyb nožníc je premyslený.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">03</div>
+      <div>
+        <h3>Kozmetika &amp; Pleťová estetika</h3>
+        <p class="quote">„Lekárska presnosť a špičkové ingrediencie.“</p>
+      </div>
+      <div class="body">
+        <p>Pracujem s prémiovými konceptmi Fusion, Ekseption a Janssen Cosmetics, ktoré sama školím. Každé ošetrenie je kokteilom účinných látok, namiešaným personalizovane pre aktuálny stav pleti. Prinášam výsledky založené na vede.</p>
+        <p>Žiadne podráždenie — len okamžité rozjasnenie, pevnejšia a vyživená pleť zvnútra. Zverte svoju pleť do rúk, ktoré v tejto oblasti vzdelávajú iných.</p>
+        <p class="brands-line">Fusion · Ekseption · Janssen Cosmetics</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">04</div>
+      <div>
+        <h3>Old-School Barber rituál</h3>
+        <p class="quote">„Návrat k poctivej chlapskej klasike.“</p>
+      </div>
+      <div class="body">
+        <p>Žiadne rýchle holenie. Nahriaty uterák, bohatá pena, ostrá čepeľ a následná regenerácia pleti. Čas, kedy muž vypne svet a odchádza dokonale upravený.</p>
+        <p>Holenie je pre mňa rituál komfortu. Aby bol čo najlepší, rozmaznáva vás to najlepšie pre mužov — Barba Italiana.</p>
+        <p class="brands-line">Barba Italiana</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">05</div>
+      <div>
+        <h3>Vizáž — harmónia líčenia a účesu</h3>
+        <p class="quote">„Femme fatale od prvého fotenia až po posledný tanec.“</p>
+      </div>
+      <div class="body">
+        <p>Ples, stužková, večierok či ten najdôležitejší deň — svadba. Chvíle, kedy nechcete premýšľať nad tým, či účes vydrží do rána a rúž sa nerozmaže.</p>
+        <p>Po rokoch práce ako vizážistka na súťažiach Miss, módnych prehliadkach a v reklamách pre značky Margaret Astor, Rimmel, Bourjois či Collistar viem, že dokonalá vizáž nie je o vrstvách make-upu — je o fyziognómii tváre a podčiarknutí vašej prirodzenej krásy.</p>
+        <p>Prepojenie profesionálneho líčenia a vlasového stylingu pod jednou strechou vám ušetrí stres aj čas. Len vy — v tej najkrajšej verzii.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="sluzby">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Prehľad služieb</span>
+      <h2>Všetko pod jednou strechou</h2>
+      <p>Kaderníctvo, trichológia, kozmetika, vizáž, spoločenský účes aj barber — bez nutnosti navštevovať štyri rôzne miesta.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-cell"><div class="n">01</div><h4>Kaderníctvo</h4><p>Talianske techniky strihu a farbenia prispôsobené vašej tvári.</p></div>
+      <div class="svc-cell"><div class="n">02</div><h4>Trichológia</h4><p>Diagnostika pokožky hlavy a cielená terapia proti príčine.</p></div>
+      <div class="svc-cell"><div class="n">03</div><h4>Kozmetika</h4><p>Pokročilá pleťová estetika — Fusion, Ekseption, Janssen.</p></div>
+      <div class="svc-cell"><div class="n">04</div><h4>Vizáž &amp; líčenie</h4><p>Profesionálne líčenie pre každú výnimočnú príležitosť.</p></div>
+      <div class="svc-cell"><div class="n">05</div><h4>Spoločenský účes</h4><p>Účesy na ples, stužkovú, večierok aj svadbu.</p></div>
+      <div class="svc-cell"><div class="n">06</div><h4>Barber</h4><p>Old-school rituál holenia s Barba Italiana.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="preco">
+  <div class="wrap">
+    <div class="pillars-head">
+      <span class="eyebrow">A na záver… prečo ja?</span>
+      <h2>Tri dôvody, ktoré robia rozdiel</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="num">01</div>
+        <h4>Ruky lektorky</h4>
+        <p>Služby neposkytuje len personál, ale človek, ktorý v tejto sfére vzdeláva iných profesionálov.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">02</div>
+        <h4>Absolútny detail a diagnostika</h4>
+        <p>Nikdy nezačíname bez toho, aby som spoznala skutočný stav vašich vlasov a pleti.</p>
+      </div>
+      <div class="why-card">
+        <div class="num">03</div>
+        <h4>Všetko pod jednou strechou</h4>
+        <p>Komplexná vizáž, estetická starostlivosť aj relax bez nutnosti navštevovať štyri rôzne miesta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="manifesto">
+  <div class="wrap">
+    <span class="eyebrow">UNICO by Karin</span>
+    <p>Prepojením špičkovej talianskej vlasovej architektúry, trichológie a pokročilej pleťovej estetiky od medzinárodnej lektorky mením bežnú starostlivosť na <em>osobný rituál zdravia, krásy a sebavedomia</em> pre ženy aj mužov.</p>
+  </div>
+</section>
+
+<section class="contact" id="kontakt">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Objednávky</span>
+      <h2>Objednajte sa telefonicky</h2>
+      <p>Objednávky prijímam výhradne telefonicky, aby som každému klientovi vedela venovať čas a pripraviť starostlivosť na mieru.</p>
+      <div class="phone-box">
+        <small>Zavolajte mi</small>
+        <a href="tel:+421911476786">+421 911 476 786</a>
+      </div>
+    </div>
+    <div class="contact-side">
+      <div class="row">
+        <small>Pôsobnosť</small>
+        <p>Zvolen a široké okolie</p>
+      </div>
+      <div class="row">
+        <small>Objednávky</small>
+        <p>Výhradne telefonicky</p>
+      </div>
+      <div class="row">
+        <small>Sledujte ma</small>
+        <div class="socials">
+          <a href="https://www.facebook.com/p/Karin-Broczko-61581252053894/" target="_blank" rel="noopener">Facebook</a>
+          <a href="https://www.instagram.com/karin_barbados" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="brand">UNICO by Karin</span>
+    Zdravie vlasov a pleti od medzinárodnej lektorky · Zvolen a okolie · +421 911 476 786
+  </div>
+</footer>
+
+</body>
+</html>

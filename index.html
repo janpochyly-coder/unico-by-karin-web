@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNICO by Karin — Výber dizajnu webu</title>
+<meta name="description" content="Rozcestník s tromi návrhmi webu pre salón UNICO by Karin — Zvolen a okolie.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f2eb;
+    --bg-2:#f1e9dd;
+    --card:#fffdf9;
+    --ink:#2b2723;
+    --muted:#7a6f63;
+    --line:#e6dccb;
+    --gold:#a9814a;
+    --gold-2:#c8a15a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:'Jost',sans-serif;font-weight:300;line-height:1.7;overflow-x:hidden;
+    background-image:radial-gradient(circle at 12% 8%,rgba(200,161,90,.10),transparent 42%),radial-gradient(circle at 88% 92%,rgba(201,169,160,.12),transparent 42%)}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:500;line-height:1.1}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+
+  header{padding:30px 0;border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:1.7rem;letter-spacing:.12em}
+  .brand b{color:var(--gold);font-weight:500}
+  .badge-tag{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);padding:8px 16px;border-radius:50px}
+
+  .hero{text-align:center;padding:80px 0 50px}
+  .hero .kick{display:inline-block;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(169,129,74,.35);background:rgba(169,129,74,.06);padding:8px 18px;border-radius:50px;margin-bottom:28px}
+  .hero h1{font-size:clamp(2.6rem,6.5vw,4.6rem);margin-bottom:22px;letter-spacing:.01em}
+  .hero h1 .it{font-style:italic;color:var(--gold)}
+  .hero p{color:var(--muted);font-size:1.18rem;max-width:660px;margin:0 auto 14px}
+  .hero .meta{color:var(--muted);font-size:.95rem;margin-top:20px;letter-spacing:.02em}
+  .hero .meta b{color:var(--ink)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;padding:30px 0 40px}
+  .design{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.35s;display:flex;flex-direction:column;position:relative;box-shadow:0 10px 30px rgba(120,90,50,.05)}
+  .design:hover{transform:translateY(-8px);border-color:var(--gold);box-shadow:0 26px 60px rgba(120,90,50,.16)}
+  .num-tag{position:absolute;top:16px;left:16px;z-index:3;background:rgba(255,253,249,.8);backdrop-filter:blur(6px);border:1px solid var(--line);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond';font-weight:600;font-size:1.1rem;color:var(--gold)}
+
+  /* mini previews — each mimics that design's palette */
+  .preview{height:240px;position:relative;overflow:hidden;padding:24px;display:flex;flex-direction:column;justify-content:space-between}
+  .p1{background:radial-gradient(circle at 75% 25%,rgba(200,161,90,.16),transparent 55%),#fbf8f3;color:#2b2723}
+  .p2{background:radial-gradient(circle at 72% 28%,rgba(200,161,90,.22),transparent 55%),#100d0c;color:#f3ece1}
+  .p3{background:linear-gradient(160deg,#f3e2dc,#e6c3b8);color:#4a403c}
+  .pv-top{display:flex;justify-content:space-between;align-items:center}
+  .pv-logo{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.1rem;letter-spacing:.14em}
+  .p1 .pv-logo{color:#8a6a3a}
+  .p2 .pv-logo{color:#c8a15a}
+  .p3 .pv-logo{color:#b2766a}
+  .pv-dots{display:flex;gap:6px}
+  .pv-dots i{width:9px;height:9px;border-radius:50%;display:block}
+  .pv-mid{font-family:'Cormorant Garamond',serif;font-size:1.7rem;line-height:1.15}
+  .pv-mid em{font-style:italic}
+  .p1 .pv-mid em{color:#8a6a3a}
+  .p2 .pv-mid em{color:#e2c58c}
+  .p3 .pv-mid em{color:#b2766a}
+  .pv-chips{display:flex;gap:8px;flex-wrap:wrap}
+  .pv-chips span{font-size:.7rem;letter-spacing:.04em;padding:6px 12px;border-radius:50px}
+  .p1 .pv-chips span{border:1px solid rgba(138,106,58,.4);color:#8a6a3a}
+  .p2 .pv-chips span{border:1px solid rgba(226,197,140,.4);color:#e2c58c}
+  .p3 .pv-chips span{background:#fffdfb;color:#b2766a}
+  .pv-swatches{position:absolute;bottom:0;left:0;right:0;height:8px;display:flex}
+  .pv-swatches i{flex:1}
+
+  .design-body{padding:26px;flex:1;display:flex;flex-direction:column}
+  .design-body h3{font-size:1.6rem;margin-bottom:4px}
+  .design-body .style-name{color:var(--gold);font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .design-body p{color:var(--muted);font-size:.95rem;margin-bottom:18px;flex:1}
+  .feats{list-style:none;margin-bottom:22px;display:flex;flex-direction:column;gap:9px}
+  .feats li{font-size:.9rem;color:var(--ink);display:flex;gap:10px;align-items:flex-start}
+  .feats li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none}
+  .palette{display:flex;gap:7px;margin-bottom:20px}
+  .palette i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+  .open-btn{display:flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:#f7f2eb;font-weight:400;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;padding:15px;border-radius:50px;transition:.3s;font-family:'Jost'}
+  .open-btn:hover{background:var(--gold)}
+  .design:nth-child(2) .open-btn{background:#100d0c}.design:nth-child(2) .open-btn:hover{background:#c8a15a;color:#100d0c}
+  .design:nth-child(2) .style-name,.design:nth-child(2) .num-tag{color:#b98f4e}
+  .design:nth-child(2) .feats li::before{background:#b98f4e}
+  .design:nth-child(3) .open-btn{background:#b2766a}.design:nth-child(3) .open-btn:hover{background:#8a6a3a}
+  .design:nth-child(3) .style-name,.design:nth-child(3) .num-tag{color:#b2766a}
+  .design:nth-child(3) .feats li::before{background:#c98f83}
+
+  /* compare table */
+  .compare{padding:70px 0 40px}
+  .compare h2{font-size:2.4rem;text-align:center;margin-bottom:8px}
+  .compare .sub{text-align:center;color:var(--muted);margin-bottom:40px}
+  .ctable{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .ctable th,.ctable td{padding:16px 20px;text-align:left;border-bottom:1px solid var(--line);font-size:.94rem}
+  .ctable th{background:var(--bg-2);font-family:'Cormorant Garamond';font-weight:600;font-size:1.1rem}
+  .ctable td:first-child{color:var(--muted)}
+  .ctable tr:last-child td{border-bottom:none}
+  .ctable .c1{color:#8a6a3a}.ctable .c2{color:#b98f4e}.ctable .c3{color:#b2766a}
+
+  .info-note{max-width:780px;margin:50px auto 0;background:var(--bg-2);border:1px solid var(--line);border-radius:16px;padding:28px 32px;font-size:.94rem;color:var(--muted)}
+  .info-note b{color:var(--ink)}
+
+  footer{border-top:1px solid var(--line);margin-top:70px;padding:40px 0;text-align:center;color:var(--muted);font-size:.9rem}
+  footer .b{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);letter-spacing:.1em}
+
+  @media(max-width:900px){.grid{grid-template-columns:1fr}.ctable{font-size:.82rem}.ctable th,.ctable td{padding:12px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="brand">UNICO <b>by Karin</b></div>
+    <span class="badge-tag">Rozcestník · výber dizajnu</span>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kick">3 kompletné návrhy · vyberte si</span>
+    <h1>Jeden salón,<br><span class="it">tri odlišné svety.</span></h1>
+    <p>Pre salón UNICO by Karin som pripravil tri kompletne odlišné dizajny webu — každý má vlastnú farebnú paletu, typografiu aj štýl. Otvorte si ich a porovnajte.</p>
+    <div class="meta">📍 <b>Zvolen a široké okolie</b> &nbsp;·&nbsp; ☎️ Objednávky výhradne telefonicky &nbsp;·&nbsp; <b>+421 911 476 786</b></div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="grid">
+
+    <!-- návrh 1 -->
+    <div class="design">
+      <div class="num-tag">01</div>
+      <div class="preview p1">
+        <div class="pv-top">
+          <span class="pv-logo">UNICO</span>
+          <span class="pv-dots"><i style="background:#8a6a3a"></i><i style="background:#c9a9a0"></i><i style="background:#e3d9c9"></i></span>
+        </div>
+        <div class="pv-mid">Krása ako<br><em>osobný rituál</em></div>
+        <div class="pv-chips"><span>Trichológia</span><span>Kaderníctvo</span><span>Vizáž</span></div>
+        <div class="pv-swatches"><i style="background:#fbf8f3"></i><i style="background:#8a6a3a"></i><i style="background:#c9a9a0"></i><i style="background:#e3d9c9"></i></div>
+      </div>
+      <div class="design-body">
+        <h3>Editorial</h3>
+        <div class="style-name">Svetlý · magazínový · zlatá</div>
+        <p>Krémovo-zlatá paleta a serifová typografia. Elegantný „časopisový" layout, nadčasový a klasický luxus.</p>
+        <ul class="feats">
+          <li>Krémovo-zlatá, svetlá a vzdušná</li>
+          <li>Piliere ako riadkové sekcie s číslami</li>
+          <li>Písmo Cormorant Garamond + Jost</li>
+        </ul>
+        <div class="palette"><i style="background:#fbf8f3"></i><i style="background:#f6f1e9"></i><i style="background:#8a6a3a"></i><i style="background:#c9a9a0"></i><i style="background:#2b2723"></i></div>
+        <a class="open-btn" href="navrh-1/index.html">Otvoriť návrh 1 →</a>
+      </div>
+    </div>
+
+    <!-- návrh 2 -->
+    <div class="design">
+      <div class="num-tag">02</div>
+      <div class="preview p2">
+        <div class="pv-top">
+          <span class="pv-logo">UNICO</span>
+          <span class="pv-dots"><i style="background:#c8a15a"></i><i style="background:#e2c58c"></i><i style="background:#caa79c"></i></span>
+        </div>
+        <div class="pv-mid">Starostlivosť<br>sa mení na <em>rituál</em></div>
+        <div class="pv-chips"><span>Barber</span><span>Estetika</span><span>Farba</span></div>
+        <div class="pv-swatches"><i style="background:#100d0c"></i><i style="background:#c8a15a"></i><i style="background:#e2c58c"></i><i style="background:#171312"></i></div>
+      </div>
+      <div class="design-body">
+        <h3>Noir</h3>
+        <div class="style-name">Tmavý · dramatický · exkluzívny</div>
+        <p>Hlboká čokoládovo-čierna so zlatými akcentmi a veľkým vodoznakom. Odvážny, prémiový a exkluzívny pocit.</p>
+        <ul class="feats">
+          <li>Tmavá scéna so zlatými detailmi</li>
+          <li>Obrysové čísla a jemné „glow" efekty</li>
+          <li>Písmo Playfair Display + Manrope</li>
+        </ul>
+        <div class="palette"><i style="background:#100d0c"></i><i style="background:#1e1917"></i><i style="background:#c8a15a"></i><i style="background:#e2c58c"></i><i style="background:#f3ece1"></i></div>
+        <a class="open-btn" href="navrh-2/index.html">Otvoriť návrh 2 →</a>
+      </div>
+    </div>
+
+    <!-- návrh 3 -->
+    <div class="design">
+      <div class="num-tag">03</div>
+      <div class="preview p3">
+        <div class="pv-top">
+          <span class="pv-logo">UNICO</span>
+          <span class="pv-dots"><i style="background:#b2766a"></i><i style="background:#bf9a6a"></i><i style="background:#efd8d0"></i></span>
+        </div>
+        <div class="pv-mid">Vaša krása ako<br><em>osobný rituál</em></div>
+        <div class="pv-chips"><span>Kozmetika</span><span>Líčenie</span></div>
+        <div class="pv-swatches"><i style="background:#f3e2dc"></i><i style="background:#b2766a"></i><i style="background:#bf9a6a"></i><i style="background:#efe6db"></i></div>
+      </div>
+      <div class="design-body">
+        <h3>Blush</h3>
+        <div class="style-name">Svetlý · jemný · ženský</div>
+        <p>Pudrovo-ružové a pieskové tóny, oblé tvary a mäkké tiene. Teplý, prívetivý a stále luxusný dizajn.</p>
+        <ul class="feats">
+          <li>Pudrové tóny, oblé tvary, mäkké tiene</li>
+          <li>Karty pilierov s guľatými číslami</li>
+          <li>Písmo Fraunces + Outfit</li>
+        </ul>
+        <div class="palette"><i style="background:#fbf5f2"></i><i style="background:#f3e2dc"></i><i style="background:#b2766a"></i><i style="background:#bf9a6a"></i><i style="background:#4a403c"></i></div>
+        <a class="open-btn" href="navrh-3/index.html">Otvoriť návrh 3 →</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<section class="compare">
+  <div class="wrap">
+    <h2>Rýchle porovnanie</h2>
+    <p class="sub">Všetky tri sú plne responzívne a obsahujú rovnaké údaje o salóne.</p>
+    <table class="ctable">
+      <tr>
+        <th>Vlastnosť</th>
+        <th class="c1">01 · Editorial</th>
+        <th class="c2">02 · Noir</th>
+        <th class="c3">03 · Blush</th>
+      </tr>
+      <tr><td>Nálada</td><td>Nadčasový luxus</td><td>Dráma, exkluzivita</td><td>Jemnosť, teplo</td></tr>
+      <tr><td>Farebnosť</td><td>Krémovo-zlatá</td><td>Tmavá + zlatá</td><td>Pudrovo-ružová</td></tr>
+      <tr><td>Typografia</td><td>Serif (Cormorant)</td><td>Serif (Playfair)</td><td>Serif (Fraunces)</td></tr>
+      <tr><td>Charakter</td><td>Magazínový, svetlý</td><td>Tmavý, odvážny</td><td>Oblý, mäkký</td></tr>
+      <tr><td>Cieľová skupina</td><td>Nároční klienti</td><td>Prémiový segment</td><td>Ženská klientela</td></tr>
+    </table>
+
+    <div class="info-note">
+      💡 <b>Ako ďalej:</b> Otvorte si každý návrh, prejdite ho a povedzte mi, ktorý smer sa vám najviac páči. Vybraný návrh potom môžeme doladiť — vymeniť ilustračné plochy za reálne fotky, upraviť texty, farby či pridať ďalšie sekcie. Všetky texty vychádzajú z vašich podkladov; jediný reálny kontakt je telefónne číslo <b>+421 911 476 786</b>.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="b">UNICO by Karin</span> · Zdravie vlasov a pleti od medzinárodnej lektorky · Zvolen a okolie · Tri návrhy webu — vyberte si ten pravý
+  </div>
+</footer>
+</body>
+</html>
