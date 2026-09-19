@@ -52,7 +52,8 @@
     border-bottom:1px solid var(--line);
   }
   .nav-in{display:flex;align-items:center;justify-content:space-between;height:78px}
-  .brand{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.16em}
+  .brand{font-family:'Cormorant Garamond',serif;font-size:26px;letter-spacing:.16em;display:inline-flex;align-items:center}
+  .brand img{height:46px;width:auto;display:block}
   .brand span{color:var(--gold-deep)}
   .nav-links{display:flex;gap:34px;font-size:12px;letter-spacing:.2em;text-transform:uppercase}
   .nav-links a{color:var(--soft);transition:color .3s}
@@ -186,7 +187,8 @@
   .socials a{font-size:12px;letter-spacing:.16em;text-transform:uppercase;border-bottom:1px solid var(--gold);padding-bottom:2px}
 
   footer{background:#211d19;color:#8f8578;padding:36px 0;text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
-  footer .brand{display:block;color:var(--cream);font-size:22px;margin-bottom:12px;letter-spacing:.16em}
+  footer .brand{display:inline-flex;color:var(--cream);font-size:22px;margin-bottom:16px;letter-spacing:.16em}
+  footer .brand img{height:52px;width:auto;filter:brightness(0) invert(1);opacity:.92}
 
   @media(max-width:900px){
     .nav-links,.nav-cta{display:none}
@@ -207,7 +209,7 @@
 
 <nav>
   <div class="wrap nav-in">
-    <div class="brand">UNICO <span>by Karin</span></div>
+    <a href="#" class="brand" aria-label="UNICO by Karin"><img src="img/unico-logo.png" alt="UNICO by Karin"></a>
     <div class="nav-links">
       <a href="#pribeh">Príbeh</a>
       <a href="#piliere">Piliere</a>
@@ -419,7 +421,7 @@
 
 <footer>
   <div class="wrap">
-    <span class="brand">UNICO by Karin</span>
+    <span class="brand"><img src="img/unico-logo.png" alt="UNICO by Karin"></span><br>
     Zdravie vlasov a pleti od medzinárodnej lektorky · Zvolen a okolie · +421 911 476 786
   </div>
 </footer>
