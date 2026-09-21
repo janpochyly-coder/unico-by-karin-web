@@ -18,12 +18,19 @@
 (function () {
   var opts = document.querySelectorAll('.opt');
   var list = document.getElementById('ritual-list');
-  var count = document.getElementById('ritual-count');
+  var count = document.getElementById('sum-count');
   var copyBtn = document.getElementById('copy-ritual');
   var resetBtn = document.getElementById('reset-ritual');
   if (!opts.length || !list) return;
 
   var EMPTY = 'Zatiaľ ste nič nevybrali — kliknite na služby vľavo.';
+
+  function countLabel(n) {
+    if (n === 0) return 'Zatiaľ bez výberu';
+    if (n === 1) return '1 vybraná služba';
+    if (n >= 2 && n <= 4) return n + ' vybrané služby';
+    return n + ' vybraných služieb';
+  }
 
   function render() {
     var chosen = [];
@@ -43,7 +50,7 @@
         list.appendChild(li);
       });
     }
-    if (count) count.textContent = chosen.length;
+    if (count) count.textContent = countLabel(chosen.length);
     return chosen;
   }
 
