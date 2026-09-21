@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Služby — UNICO by Karin</title>
+<meta name="description" content="Trichológia, kaderníctvo (taliansky štýl), kozmetika a pleťová estetika, old-school barber a vizáž. Päť pilierov starostlivosti UNICO by Karin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* prehľad služieb */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .svc-cell{background:var(--paper);padding:40px 32px;transition:.4s}
+  .svc-cell:hover{background:var(--cream)}
+  .svc-cell .n{font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--gold)}
+  .svc-cell h4{font-size:27px;margin:12px 0 8px}
+  .svc-cell p{font-size:14px;color:var(--soft)}
+
+  /* piliere */
+  .pillars{background:var(--cream)}
+  .pillar{display:grid;grid-template-columns:64px 1fr 1fr;gap:48px;align-items:start;
+    padding:52px 0;border-top:1px solid var(--line)}
+  .pillar:last-child{border-bottom:1px solid var(--line)}
+  .pillar .num{font-family:'Cormorant Garamond',serif;font-size:40px;color:var(--gold);line-height:1}
+  .pillar h3{font-size:34px;margin-bottom:10px}
+  .pillar .quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--gold-deep)}
+  .pillar .body p{color:var(--soft);margin-bottom:14px}
+  .pillar .body p:last-child{margin-bottom:0}
+  .brands-line{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-top:6px}
+
+  @media(max-width:860px){
+    .svc-grid{grid-template-columns:1fr}
+    .pillar{grid-template-columns:1fr;gap:16px;padding:40px 0}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  Objednávky výhradne telefonicky &nbsp;·&nbsp; <a href="tel:+421911476786">+421 911 476 786</a> &nbsp;·&nbsp; Zvolen a široké okolie
+</div>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="index.html" class="brand" aria-label="UNICO by Karin"><img src="img/unico-logo.png" alt="UNICO by Karin"></a>
+    <div class="nav-links">
+      <a href="index.html">Domov</a>
+      <a href="o-mne.html">O mne</a>
+      <a href="sluzby.html" class="active">Služby</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+    <a href="tel:+421911476786" class="nav-cta">Objednať sa</a>
+    <button class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="wrap">
+    <span class="eyebrow">Služby salónu</span>
+    <h1>Komplexná starostlivosť <em>na mieru</em></h1>
+    <p>Kaderníctvo, trichológia, kozmetika, vizáž, spoločenský účes aj barber — bez nutnosti navštevovať štyri rôzne miesta.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Prehľad</span>
+      <h2>Čo pre vás robím</h2>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-cell"><div class="n">01</div><h4>Kaderníctvo</h4><p>Talianske techniky strihu a farbenia prispôsobené vašej tvári.</p></div>
+      <div class="svc-cell"><div class="n">02</div><h4>Trichológia</h4><p>Diagnostika pokožky hlavy a cielená terapia proti príčine.</p></div>
+      <div class="svc-cell"><div class="n">03</div><h4>Kozmetika</h4><p>Pokročilá pleťová estetika — Fusion, Ekseption, Janssen.</p></div>
+      <div class="svc-cell"><div class="n">04</div><h4>Vizáž &amp; líčenie</h4><p>Profesionálne líčenie pre každú výnimočnú príležitosť.</p></div>
+      <div class="svc-cell"><div class="n">05</div><h4>Spoločenský účes</h4><p>Účesy na ples, stužkovú, večierok aj svadbu.</p></div>
+      <div class="svc-cell"><div class="n">06</div><h4>Barber</h4><p>Old-school rituál holenia s Barba Italiana.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="pillars">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Predstavím vám 5 pilierov môjho salónu</span>
+      <h2>Päť pilierov starostlivosti</h2>
+    </div>
+
+    <div class="pillar">
+      <div class="num">01</div>
+      <div>
+        <h3>Trichológia &amp; Zdravie vlasov</h3>
+        <p class="quote">„Vlasy sú len také krásne, ako je zdravá pokožka hlavy.“</p>
+      </div>
+      <div class="body">
+        <p>Riešime príčinu, nie len následok. Spájam diagnostiku pokožky s cielene navrhnutou terapiou, ktorá navracia pokožke zdravie a vlasom hustotu, silu a prirodzený lesk.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">02</div>
+      <div>
+        <h3>Kaderníctvo &amp; Taliansky štýl</h3>
+        <p class="quote">„Technológia a strih z kolísky módy.“</p>
+      </div>
+      <div class="body">
+        <p>Ročne navštevujem talianske akadémie, aby som na Slovensko prinášala najnovšie technológie farbenia a precízne strihy. Nechytám sa trendov slepo — prispôsobujem ich architektúre vašej tváre.</p>
+        <p>Odchádzate odo mňa s farbou, ktorá má hĺbku, a strihom, ktorý drží tvar aj po týždňoch. Každý pohyb nožníc je premyslený.</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">03</div>
+      <div>
+        <h3>Kozmetika &amp; Pleťová estetika</h3>
+        <p class="quote">„Lekárska presnosť a špičkové ingrediencie.“</p>
+      </div>
+      <div class="body">
+        <p>Pracujem s prémiovými konceptmi Fusion, Ekseption a Janssen Cosmetics, ktoré sama školím. Každé ošetrenie je kokteilom účinných látok, namiešaným personalizovane pre aktuálny stav pleti. Prinášam výsledky založené na vede.</p>
+        <p>Žiadne podráždenie — len okamžité rozjasnenie, pevnejšia a vyživená pleť zvnútra. Zverte svoju pleť do rúk, ktoré v tejto oblasti vzdelávajú iných.</p>
+        <p class="brands-line">Fusion · Ekseption · Janssen Cosmetics</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">04</div>
+      <div>
+        <h3>Old-School Barber rituál</h3>
+        <p class="quote">„Návrat k poctivej chlapskej klasike.“</p>
+      </div>
+      <div class="body">
+        <p>Žiadne rýchle holenie. Nahriaty uterák, bohatá pena, ostrá čepeľ a následná regenerácia pleti. Čas, kedy muž vypne svet a odchádza dokonale upravený.</p>
+        <p>Holenie je pre mňa rituál komfortu. Aby bol čo najlepší, rozmaznáva vás to najlepšie pre mužov — Barba Italiana.</p>
+        <p class="brands-line">Barba Italiana</p>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="num">05</div>
+      <div>
+        <h3>Vizáž — harmónia líčenia a účesu</h3>
+        <p class="quote">„Femme fatale od prvého fotenia až po posledný tanec.“</p>
+      </div>
+      <div class="body">
+        <p>Ples, stužková, večierok či ten najdôležitejší deň — svadba. Chvíle, kedy nechcete premýšľať nad tým, či účes vydrží do rána a rúž sa nerozmaže.</p>
+        <p>Po rokoch práce ako vizážistka na súťažiach Miss, módnych prehliadkach a v reklamách pre značky Margaret Astor, Rimmel, Bourjois či Collistar viem, že dokonalá vizáž nie je o vrstvách make-upu — je o fyziognómii tváre a podčiarknutí vašej prirodzenej krásy.</p>
+        <p>Prepojenie profesionálneho líčenia a vlasového stylingu pod jednou strechou vám ušetrí stres aj čas. Len vy — v tej najkrajšej verzii.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="wrap">
+    <span class="eyebrow">Objednávky výhradne telefonicky</span>
+    <h2>Vyberme spolu to pravé ošetrenie</h2>
+    <p>Zavolajte a naplánujeme starostlivosť presne pre váš stav pleti a vlasov.</p>
+    <div class="phone-inline">
+      <small>Objednať sa</small>
+      <a href="tel:+421911476786">+421 911 476 786</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="img/unico-logo.png" alt="UNICO by Karin">
+        <p>Zdravie vlasov a pleti od medzinárodnej lektorky. Osobný rituál zdravia, krásy a sebavedomia pre ženy aj mužov.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Menu</h4>
+        <a href="index.html">Domov</a>
+        <a href="o-mne.html">O mne</a>
+        <a href="sluzby.html">Služby</a>
+        <a href="kontakt.html">Kontakt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Kontakt</h4>
+        <a href="tel:+421911476786">+421 911 476 786</a>
+        <p>Zvolen a široké okolie</p>
+        <a href="https://www.facebook.com/p/Karin-Broczko-61581252053894/" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://www.instagram.com/karin_barbados" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© UNICO by Karin · Objednávky výhradne telefonicky · +421 911 476 786</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
