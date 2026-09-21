@@ -47,60 +47,10 @@
   .p-item p{color:var(--soft);font-size:14px}
   .teaser .more{text-align:center;margin-top:48px}
 
-  /* --- domov: konfigurátor rituálu --- */
-  .config{background:linear-gradient(160deg,var(--blush),var(--cream))}
-  .config-grid{display:grid;grid-template-columns:1.5fr .9fr;gap:40px;align-items:start}
-  .opt-group{margin-bottom:30px}
-  .opt-group:last-child{margin-bottom:0}
-  .opt-group > h3{font-size:24px;margin-bottom:16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
-  .opts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  .opt{
-    display:flex;gap:14px;align-items:flex-start;text-align:left;
-    background:var(--paper);border:1px solid var(--line);padding:18px 18px;
-    cursor:pointer;transition:.25s;font-family:inherit;color:inherit;width:100%;
-  }
-  .opt:hover{border-color:var(--gold);transform:translateY(-2px)}
-  .opt.selected{border-color:var(--gold-deep);background:#fff;box-shadow:var(--shadow)}
-  .opt .check{
-    flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--line);
-    display:flex;align-items:center;justify-content:center;margin-top:2px;transition:.25s;
-    font-size:12px;color:transparent;
-  }
-  .opt.selected .check{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
-  .opt .opt-txt h4{font-size:19px;margin-bottom:2px;font-weight:500}
-  .opt .opt-txt p{font-size:13px;color:var(--soft);line-height:1.5;margin:0}
-
-  .config-summary{
-    position:sticky;top:104px;background:var(--ink);color:var(--paper);padding:34px 30px;
-  }
-  .config-summary h3{color:var(--paper);font-size:26px;margin-bottom:6px}
-  .config-summary .sum-sub{font-size:13px;color:#c9beae;margin-bottom:22px}
-  #ritual-list{list-style:none;margin:0 0 20px;padding:0;min-height:60px}
-  #ritual-list li{
-    font-size:15px;color:var(--paper);padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);
-    display:flex;gap:10px;align-items:flex-start;
-  }
-  #ritual-list li::before{content:"—";color:var(--gold)}
-  #ritual-list li.empty{color:#9c9081;border:none;font-style:italic}
-  #ritual-list li.empty::before{content:""}
-  .sum-count{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
-  .config-summary .btn{width:100%;text-align:center;background:var(--gold-deep)}
-  .config-summary .btn:hover{background:var(--gold)}
-  .sum-actions{display:flex;gap:10px;margin-top:14px}
-  .sum-actions button{
-    flex:1;background:none;border:1px solid rgba(255,255,255,.28);color:var(--paper);
-    padding:12px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
-    font-family:inherit;transition:.25s;
-  }
-  .sum-actions button:hover{border-color:var(--gold);color:var(--gold)}
-
   @media(max-width:860px){
     .hero-grid,.intro-grid{grid-template-columns:1fr;gap:44px}
     .p-list{grid-template-columns:1fr}
     .strip{gap:22px;font-size:19px}
-    .config-grid{grid-template-columns:1fr;gap:28px}
-    .opts{grid-template-columns:1fr}
-    .config-summary{position:static}
   }
 </style>
 </head>
@@ -184,88 +134,6 @@
         <p class="serif-i" style="font-size:22px;color:var(--ink);margin-bottom:14px">Komplexná starostlivosť na mieru pre ženy aj mužov.</p>
         <a href="sluzby.html" class="btn-ghost" style="align-self:flex-start">Zobraziť služby</a>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="config" id="konfigurator">
-  <div class="wrap">
-    <div class="sec-head center">
-      <span class="eyebrow">Interaktívne · zostavte si na mieru</span>
-      <h2>Zostavte si svoj rituál</h2>
-      <p>Vyberte, čo by ste chceli riešiť. Priebežne sa vám zostaví osobný zoznam — stačí ho nadiktovať alebo poslať pri telefonáte.</p>
-    </div>
-
-    <div class="config-grid">
-      <div class="config-options">
-        <div class="opt-group">
-          <h3>Vlasy</h3>
-          <div class="opts">
-            <button type="button" class="opt" data-name="Taliansky strih">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Taliansky strih</h4><p>Precízny strih prispôsobený architektúre tváre.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Farbenie s hĺbkou">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Farbenie s hĺbkou</h4><p>Najnovšie talianske technológie farbenia.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Trichológia — diagnostika a terapia">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Trichológia</h4><p>Diagnostika pokožky hlavy a cielená terapia.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Spoločenský účes">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Spoločenský účes</h4><p>Ples, stužková, večierok či svadba.</p></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="opt-group">
-          <h3>Pleť</h3>
-          <div class="opts">
-            <button type="button" class="opt" data-name="Ošetrenie Fusion">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Ošetrenie Fusion</h4><p>Kokteil účinných látok na mieru pleti.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Ošetrenie Ekseption">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Ošetrenie Ekseption</h4><p>Pokročilá estetika s lekárskou presnosťou.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Ošetrenie Janssen Cosmetics">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Janssen Cosmetics</h4><p>Personalizovaná starostlivosť podľa stavu pleti.</p></span>
-            </button>
-            <button type="button" class="opt" data-name="Profesionálne líčenie (vizáž)">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Líčenie &amp; vizáž</h4><p>Dokonalý look na výnimočnú príležitosť.</p></span>
-            </button>
-          </div>
-        </div>
-
-        <div class="opt-group">
-          <h3>Pre mužov</h3>
-          <div class="opts">
-            <button type="button" class="opt" data-name="Old-school barber rituál">
-              <span class="check">✓</span>
-              <span class="opt-txt"><h4>Barber rituál</h4><p>Nahriaty uterák, ostrá čepeľ, Barba Italiana.</p></span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <aside class="config-summary">
-        <h3>Váš rituál</h3>
-        <p class="sum-sub">Osobný zoznam na mieru</p>
-        <ul id="ritual-list">
-          <li class="empty">Zatiaľ ste nič nevybrali — kliknite na služby vľavo.</li>
-        </ul>
-        <div class="sum-count" id="sum-count">Zatiaľ bez výberu</div>
-        <a class="btn" href="tel:+421911476786">Zavolať a objednať</a>
-        <div class="sum-actions">
-          <button type="button" id="copy-ritual">Kopírovať zoznam</button>
-          <button type="button" id="reset-ritual">Vyčistiť</button>
-        </div>
-      </aside>
     </div>
   </div>
 </section>
